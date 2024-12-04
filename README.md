@@ -4,7 +4,7 @@
 
 ## Descripción
 
-La **Notes App** es una aplicación web que permite a los usuarios crear, editar y eliminar notas. Utiliza **React** y **Material-UI** para la interfaz de usuario y **Firebase** para el almacenamiento en la nube. Esta aplicación permite a los usuarios gestionar sus notas de manera eficiente y rápida.
+La **Notes App** es una aplicación web que permite a los usuarios administrar notas. Utiliza **React** y **Material-UI** para la interfaz de usuario y **Firebase** para el almacenamiento en la nube. Esta aplicación permite a los usuarios gestionar sus notas de manera eficiente y rápida.
 
 ## Características
 
