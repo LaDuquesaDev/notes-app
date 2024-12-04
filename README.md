@@ -42,6 +42,6 @@ Antes de empezar, asegúrate de tener instalado lo siguiente en tu máquina:
 
 <div align="center">
  <br></br>
- <img style="max-width: "100%"; height: auto;" src="https://imgur.com/dsr4wPd.png" alt="notes-app">
+ <img style="max-width: "100%"; height: auto;" src="https://imgur.com/M7xNWqv.png" alt="notes-app">
 </div>
 <br></br>
