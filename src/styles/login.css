@@ -1,39 +1,81 @@
-@media (min-width: 760px) {
-  .root {
-    margin: 0%;
-    width: auto;
-    height: auto;
-  }
-  
-  .title {
-    display: flex;
-    justify-content: center;
-    margin-top: 30%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.text p {
+  color: #777;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.login-btn {
+  background-color: rgb(255, 204, 0);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.login-btn:hover {
+  background-color: #f5b300;
+  transform: scale(1.05);
+}
+
+.login-google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .login-container {
+    padding: 20px 15px;
+    width: 80%;
   }
 
-  .title .h1 {
-    font-size: 40%;
+  .title h1 {
+    font-size: 2rem;
   }
 
-  .text{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10%;
-    font-size: 20px;
+  .text p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
   }
-  
+
   .login-btn {
-    display: flex;
-    margin: 40%;
-    margin-top: 20%;
-    padding: 10px;
-    font-size: 15px;
-    border: none;
-    color: rgb(0, 0, 0);
-  }
-  
-  .login-google {
-    background-color: #ffcc00;
+    font-size: 1rem;
+    padding: 12px 25px;
   }
 }

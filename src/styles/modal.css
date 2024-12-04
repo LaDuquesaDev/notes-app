@@ -46,3 +46,35 @@
     gap: 1rem;
     margin-top: 1rem;
   }
+
+  .addNote-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 320px;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #5e4caf 0%, #4554a0 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    outline: none;
+  }
+  
+  .addNote-btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #4554a0 0%, #5e4caf 100%);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .addNote-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+  }

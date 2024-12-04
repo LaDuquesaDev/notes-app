@@ -8,7 +8,9 @@ import "../styles/modal.css";
 import { ModalNotes } from "./ModalNotes";
 
 export const Notes = () => {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState<Array<{ title: string; content: string }>>(
+    []
+  );
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -25,8 +27,8 @@ export const Notes = () => {
   };
 
   const getNotes = async () => {
-    await getNoteList();
-    setNotes(notes);
+    const fetchedNotes = await getNoteList();
+    setNotes(fetchedNotes);
     setIsLoading(false);
   };
 
@@ -49,7 +51,6 @@ export const Notes = () => {
             </div>
           ))}
         </section>
-        <button className="add-note-btn">+</button>
         <ModalNotes />
       </div>
     );
