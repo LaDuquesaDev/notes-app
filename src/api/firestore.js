@@ -4,11 +4,6 @@ import {
     addDoc, 
     getDocs,
     query,
-    // onSnapshot,
-    // deleteDoc,
-    // doc,
-    // getDoc,
-    // updateDoc
 } from "firebase/firestore";
 
 export const saveNotes = async (title, content) => {
