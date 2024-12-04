@@ -13,6 +13,7 @@ export function ModalNotes({ children }: ModalProps) {
     title: "",
     content: "",
   });
+  const [isSaving, setIsSaving] = useState(false); // Indica si está guardando
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -29,8 +30,25 @@ export function ModalNotes({ children }: ModalProps) {
       [e.target.name]: e.target.value,
     });
 
-  const printValues = (e: React.FormEvent) => {
+  const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!form.title || !form.content) {
+      alert("El título y el contenido son obligatorios.");
+      return;
+    }
+
+    try {
+      setIsSaving(true);
+      await saveNotes(form.title, form.content);
+      alert("Nota guardada con éxito!");
+      setState({ title: "", content: "" });
+      handleClose();
+    } catch (error) {
+      console.error("Error al guardar la nota:", error);
+      alert("Hubo un error al guardar la nota. Inténtalo de nuevo.");
+    } finally {
+      setIsSaving(false); // Termina el guardado
+    }
   };
 
   return (
@@ -42,7 +60,7 @@ export function ModalNotes({ children }: ModalProps) {
       <Modal className="modal-window" open={show} onClose={handleClose}>
         <Box className="modal-content">
           <h2>Notes-app</h2>
-          <form onSubmit={printValues}>
+          <form onSubmit={handleSave}>
             <div className="form-group">
               <label htmlFor="title">Title</label>
               <input
@@ -69,13 +87,8 @@ export function ModalNotes({ children }: ModalProps) {
               <Button variant="outlined" onClick={handleClose}>
                 Close
               </Button>
-              <Button
-                variant="contained"
-                onClick={() => {
-                  saveNotes(form.title, form.content);
-                }}
-              >
-                Save Changes
+              <Button type="submit" variant="contained" disabled={isSaving}>
+                {isSaving ? "Saving..." : "Save Changes"}
               </Button>
             </div>
           </form>
